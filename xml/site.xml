@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<site title="JOHNNY XU - CREATIVE DESIGNER %PAGE%" menu="true" assetPath="assets/">
+    <page id="index" src="index.swf" depth="bottom">
+		<asset id="indexBg_img" src="indexBg_img.jpg" depth="nested" preload="true" />		
+        <page id="nav" src="nav.swf" depth="top">
+            <page id="home" src="home.swf" menu="false" title="| HOME" >
+				<asset id="home01" src="home01.swf" depth="bottom" title="HUNT ANGELS" />
+				<asset id="home02" src="home02.swf" depth="bottom" title="TEN CANOES" />
+				<asset id="home03" src="home03.swf" depth="bottom" title="FREEDOM WRITERS" />
+				<asset id="home04" src="home04.swf" depth="bottom" title="HAZARD A GUESS" />
+				<asset id="home05" src="home05.swf" depth="bottom" title="DESTINATION" />
+				<asset id="btnGallery" src="btnGallery.swf" depth="bottom" type="sprite" />
+				<asset id="hint" src="hint.swf" depth="bottom" type="sprite" />
+			</page>
+			<page id="about" title="| ABOUT" src="about.swf" menu="false" preload="false" />
+			<page id="work" title="| WORK" src="work.swf" menu="false" preload="false">
+				<page id="menu" title="| WORK" src="work/menu.swf" menu="false" preload="false" />
+				
+				<!-- web -->
+				<page id="web01" src="work/web01.swf" menu="false" preload="false" title="| Hunt Angels"/>
+				<page id="web02" src="work/web02.swf" menu="false" preload="false" title="| Ten Canoes"/>
+				<page id="web03" src="work/web03.swf" menu="false" preload="false" title="| Freedom Writers"/>
+				<page id="web04" src="work/web04.swf" menu="false" preload="false" title="| Hazard A Guess"/>
+				<page id="web05" src="work/web05.swf" menu="false" preload="false" title="| The Lost Dogs Home Interactive Pet"/>
+				<page id="web06" src="work/web06.swf" menu="false" preload="false" title="| Diploma of Project Management Online"/>
+				
+				<!-- mm -->
+				<page id="mm01" src="work/mm01.swf" menu="false" preload="false" title="| Human Body at Work"/>
+				<page id="mm02" src="work/mm02.swf" menu="false" preload="false" title="| Our Achievements FY08"/>
+				<page id="mm03" src="work/mm03.swf" menu="false" preload="false" title="| E.T. Player"/>
+				
+				<!-- personal -->
+				<page id="ps01" src="work/ps01.swf" menu="false" preload="false" title="| Destination">
+					<asset id="video" src="dest_web.mp4" type="netstream" preload="false" title="Destination" />
+				</page>
+				<page id="ps02" src="work/ps02.swf" menu="false" preload="false" title="| Vegetarium"/>
+				
+			</page>
+			<page id="cv" title="| C.V." src="cv.swf" menu="false" preload="false" />
+			<page id="contact" title="| CONTACT" src="contact.swf" menu="false" preload="false" />
+        </page>
+    </page>
+</site>
