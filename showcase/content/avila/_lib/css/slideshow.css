@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* ------------------------------------------------------------------------------ */
+/* slideshow */
+/* ------------------------------------------------------------------------------ */
+
+/*container*/
+.slideshow { display:block; position:relative; width:640px; height:420px; margin:0 auto!important; padding:0; overflow:visible; }
+	
+	/*slide item*/
+	.slideshow .slide { 
+		position:absolute; width:640px; height:360px; margin:0!important; padding:0; top:10px!important; left:0px!important;
+		/*box-shadow*/-webkit-box-shadow:0px 1px 2px 0px rgba(0,0,0,0.2); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.2);  }
+		
+		/*slide image*/
+		.slideshow .slide img { 
+			display:block; position:relative; width:640px; height:360px; margin:0; padding:0; overflow:hidden;
+			background:#efefef; border:none; }
+		.ie6 .slideshow .slide img,
+		.ie7 .slideshow .slide img,
+		.ie8 .slideshow .slide img { 
+			border:1px solid #d9d9d9; border-top:none; border-bottom-width:2px; }
+		
+/*prev, next buttons*/
+.slideshow .btnPrev,
+.slideshow .btnNext { 
+	display:inline-block!important; width:20px; height:20px; margin:0 10px; cursor:pointer; vertical-align:middle;
+	background-image:url(../img/sprite-btns.png); background-repeat:no-repeat; 
+
+/* CODE FOR GREY SITE - REMOVE IF NECESSARY: */
+	text-indent: 0; font-weight:bold; color:#666; line-height:12px; width:60px; 
+	}
+	.slideshow .btnPrev.disabled,
+	.slideshow .btnNext.disabled { cursor:default!important; }
+	/*remove bg in ie6, multiple classes CSS not supported*/
+	.ie6 .slideshow .disabled { background:none!important; }
+	
+	/*IE7 display inline with text-indent fix*/
+	.ie6 .slideshow .btnPrev,
+	.ie6 .slideshow .btnNext,
+	.ie7 .slideshow .btnPrev,
+	.ie7 .slideshow .btnNext { text-indent:0!important; }
+	
+	/*default theme*/
+	.slideshow .btnPrev { background-position:-5px -150px; }
+	.slideshow .btnPrev:hover,
+	.slideshow .btnPrev:focus { background-position:-45px -150px; }
+	.slideshow .btnNext { background-position:-25px -150px; }
+	.slideshow .btnNext:hover,
+	.slideshow .btnNext:focus { background-position:-65px -150px; }
+	.slideshow .btnPrev.disabled,
+	.slideshow .btnNext.disabled { /*opacity*/opacity:0.5; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter:alpha(opacity=50); }
+	
+/*toggle*/
+.slideshow .btnToggle {
+	display:none!important;
+	/*position:absolute; width:40px; height:40px; bottom:105px; right:20px; z-index:510; cursor:pointer!important;
+	background-image:url(../img/sprite-slideshow.png);*/ }
+	
+	/*
+	.slideshow .btnToggle { background-position:-110px 0; }
+	.slideshow .btnToggle:hover,
+	.slideshow .btnToggle:focus { background-position:-110px -40px; }
+	.slideshow .btnTogglePause { background-position:-160px 0; }
+	.slideshow .btnTogglePause:hover,
+	.slideshow .btnTogglePause:focus { background-position:-160px -40px; }
+	*/
+
+/*slideshowControls*/
+.slideshow .controls { position:absolute; left:0px; bottom:35px; width:640px; height:20px; margin:0; padding:0; text-align:center; }
+
+/* CODE FOR GREY SITE - REMOVE IF NECESSARY: */
+	.slideshow .controls {bottom:10px; }
+	
+	/*slideshowControls pager*/
+	.slideshow .controls .pager { display:inline-block; width:auto; vertical-align:middle; }
+	/*slideshowControls buttons*/
+	.slideshow .controls .btnSlide {
+		display:inline-block; width:20px; height:20px; line-height:20px; padding:0; margin:0;
+		/*ir*/ text-indent:-999em; overflow:hidden; text-align:left; direction:ltr; line-height:1px; cursor:pointer!important; vertical-align:middle;
+		background-image:url(../img/sprite-btns.png); background-repeat:no-repeat; }
+		/*behavior*/
+		.slideshow .controls .btnSlide:hover,
+		.slideshow .controls .btnSlide:focus { outline:none; }
+		/*IE7 display inline with text-indent fix*/
+		.ie6 .slideshow .controls .btnSlide,
+		.ie7 .slideshow .controls .btnSlide { text-indent:0!important; }
+		.ie6 .slideshow .controls .btnSlide span,
+		.ie7 .slideshow .controls .btnSlide span { display:none; }
+	/*current item*/
+	.slideshow .controls .activeSlide,
+	.slideshow .controls .activeSlide:hover,
+	.slideshow .controls .activeSlide:focus { cursor:default!important; }
+	
+	/*default theme*/
+	.slideshow .controls .btnSlide 			{ background-position:-85px -150px; }
+	.slideshow .controls .btnSlide:hover,
+	.slideshow .controls .btnSlide:focus 	{ background-position:-105px -150px; }
+	.slideshow .controls .activeSlide,
+	.slideshow .controls .activeSlide:hover,
+	.slideshow .controls .activeSlide:focus { background-position:-125px -150px; }

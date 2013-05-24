@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* ------------------------------------------------------------------------------ */
+/* image object styles (for fckstyles.xml) */
+/* ------------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------------ */
+/* image styles (from academy mobile) */
+.contentViewport img.fullWidthImage 	{ display:block; width:100%; height:auto; margin:0 0 10px 0; padding:0; }
+.contentViewport img.borderedImage 		{ display:block; width:auto; height:auto; padding:2px; border:1px solid #ccc; background-color:#fff; }
+.contentViewport img.leftAligned		{ float:left; margin:0 20px 10px 0; }
+.contentViewport img.rightAligned 		{ float:right; margin:0 0 10px 20px; }
