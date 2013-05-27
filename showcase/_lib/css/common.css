@@ -134,7 +134,7 @@ body {
 
 /* btnIcon */
 .btnIcon { 
-	display:inline-block; position:relative; width:57px; height:57px; margin:2.5% 6.5%; padding:0 0 40px 0;
+	display:inline-block; position:relative; width:57px; height:57px; margin:2% 6.5%; padding:0 0 40px 0;
 	text-decoration:none;
 	/*transition*/
 	/*-webkit-transform:translate3d(0,0,0);*/
