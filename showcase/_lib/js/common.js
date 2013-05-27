@@ -2,7 +2,7 @@
 /* init */
 /* ------------------------------------------------------------------------------ */
 function init(){
-	
+	$('.fittext').fitText();
 }
 /* DOM.ready */
 $(document).ready(function(){ 
