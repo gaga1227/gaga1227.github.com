@@ -125,7 +125,7 @@ body {
 
 /* folio */
 #folio { 
-	display:block; width:100%; height:auto; max-width:900px; margin:2% auto 0 auto; padding:0; text-align:center; }
+	display:block; width:100%; height:auto; max-width:1024px; margin:2% auto 0 auto; padding:0; text-align:center; }
 
 
 /* ==========================================================================
@@ -134,7 +134,7 @@ body {
 
 /* btnIcon */
 .btnIcon { 
-	display:inline-block; position:relative; width:57px; height:57px; margin:2.5% 5%; padding:0 0 40px 0;
+	display:inline-block; position:relative; width:57px; height:57px; margin:2.5% 6.5%; padding:0 0 40px 0;
 	text-decoration:none;
 	/*transition*/
 	/*-webkit-transform:translate3d(0,0,0);*/
