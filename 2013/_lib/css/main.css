@@ -2,28 +2,25 @@ body {
 	overflow	: hidden;
 	padding		: 0;
 	margin		: 0;
-	color		: #fff;
-	background-color: #f2f2f2;
+	color		: #000;
+	background-color: #fff;
 	font-family	: arial;
 	font-size	: 100%;
 }
-#info .top {
-	position	: absolute;
-	top			: 0px;
-	width		: 100%;
-	padding		: 5px;
-	text-align	: center;
+#container {
+	position:absolute; top:0; left:0; width:100%; height:100%; margin:0; padding:0; overflow:hidden;
+	border:30px solid #fff;
+	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;
 }
-#info a {
-	color		: #66F;
-	text-decoration	: none;
-}
-#info a:hover {
-	text-decoration	: underline;
-}
-#info .bottom {
-	position	: absolute;
-	bottom		: 0px;
-	right		: 5px;
-	padding		: 5px;
-}
+#header { position:absolute; top:50%; left:50%; width:160px; height:120px; margin:-60px 0 0 -90px; border:20px solid #fff; background:#fff; text-align:center; overflow:hidden; }
+#header .h1,
+#header .h2 { font-family:'NovecentoWide',sans-serif; font-size:25px; line-height:30px; text-transform:uppercase; }
+#header .h1 { font-weight:700; }
+#header .h2 { font-weight:600; }
+#header span { display:block; }
+
+
+.bgTop { position:absolute; top:0; left:0; width:100%; }
+.bgBtm { position:absolute; bottom:0; left:0; width:100%; }
+.bgLft { position:absolute; top:0; left:0; height:100%; }
+.bgRgt { position:absolute; top:0; right:0; height:100%; }
