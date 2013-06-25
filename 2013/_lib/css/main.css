@@ -5,20 +5,26 @@ body {
 	color		: #000;
 	background-color: #fff;
 	font-family	: arial;
-	font-size	: 100%;
-}
+	font-size	: 100%; }
+
 #container {
+	position:absolute; top:0; left:0; width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
+	
+#frame {
 	position:absolute; top:0; left:0; width:100%; height:100%; margin:0; padding:0; overflow:hidden;
-	border:30px solid #fff;
-	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;
-}
-#header { position:absolute; top:50%; left:50%; width:160px; height:120px; margin:-60px 0 0 -90px; border:20px solid #fff; background:#fff; text-align:center; overflow:hidden; }
+	border:30px solid rgba(255,255,255,1);
+	/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+
+#header { 
+	position:absolute; top:50%; left:50%; width:160px; height:120px; margin:-80px 0 0 -100px; padding:0; 
+	background:rgba(255,255,255,1); border:20px solid rgba(255,255,255,1);
+	text-align:center; overflow:hidden; }
+
 #header .h1,
 #header .h2 { font-family:'NovecentoWide',sans-serif; font-size:25px; line-height:30px; text-transform:uppercase; }
 #header .h1 { font-weight:700; }
 #header .h2 { font-weight:600; }
 #header span { display:block; }
-
 
 .bgTop { position:absolute; top:0; left:0; width:100%; }
 .bgBtm { position:absolute; bottom:0; left:0; width:100%; }

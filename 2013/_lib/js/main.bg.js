@@ -15,14 +15,14 @@ function populateScene(){
 		color: swatch.yellow,
 		shading: THREE.FlatShading,
 		side: THREE.DoubleSide,
-		opacity: 0.6,
+		opacity: 0.8,
 		transparency: true
 	} );
 	material2 = new THREE.MeshPhongMaterial( {
 		color: swatch.yellowLite,
 		shading: THREE.FlatShading,
 		side: THREE.DoubleSide,
-		opacity: 0.6,
+		opacity: 0.4,
 		transparency: true
 	} );
 
