@@ -1,0 +1,75 @@
+@font-face {
+    font-family:'PenumbraSans';
+    src: url('penumbrasansstd-light.eot');
+    src: url('penumbrasansstd-light.eot?#iefix') format('embedded-opentype'),
+         url('penumbrasansstd-light.woff') format('woff'),
+         url('penumbrasansstd-light.ttf') format('truetype'),
+         url('penumbrasansstd-light.svg#PenumbraSansStdLight') format('svg');
+    font-weight:300;
+    font-style:normal;
+}
+/* force chrome to render SVG font */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:'PenumbraSans';
+		src:url('penumbrasansstd-light.svg#PenumbraSansStdLight') format('svg');
+		font-weight:300;
+    }
+}
+
+@font-face {
+    font-family:'PenumbraSans';
+    src: url('penumbrasansstd-regular.eot');
+    src: url('penumbrasansstd-regular.eot?#iefix') format('embedded-opentype'),
+         url('penumbrasansstd-regular.woff') format('woff'),
+         url('penumbrasansstd-regular.ttf') format('truetype'),
+         url('penumbrasansstd-regular.svg#PenumbraSansStdRegular') format('svg');
+    font-weight:400;
+    font-style:normal;
+}
+/* force chrome to render SVG font */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:'PenumbraSans';
+		src:url('penumbrasansstd-regular.svg#PenumbraSansStdRegular') format('svg');
+		font-weight:400;
+    }
+}
+
+@font-face {
+    font-family:'PenumbraSans';
+    src: url('penumbrasansstd-semibold.eot');
+    src: url('penumbrasansstd-semibold.eot?#iefix') format('embedded-opentype'),
+         url('penumbrasansstd-semibold.woff') format('woff'),
+         url('penumbrasansstd-semibold.ttf') format('truetype'),
+         url('penumbrasansstd-semibold.svg#PenumbraSansStdSemiBold') format('svg');
+    font-weight:600;
+    font-style:normal;
+}
+/* force chrome to render SVG font */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:'PenumbraSans';
+		src:url('penumbrasansstd-semibold.svg#PenumbraSansStdSemiBold') format('svg');
+		font-weight:600;
+    }
+}
+
+@font-face {
+    font-family:'PenumbraSans';
+    src: url('penumbrasansstd-bold.eot');
+    src: url('penumbrasansstd-bold.eot?#iefix') format('embedded-opentype'),
+         url('penumbrasansstd-bold.woff') format('woff'),
+         url('penumbrasansstd-bold.ttf') format('truetype'),
+         url('penumbrasansstd-bold.svg#PenumbraSansStdBold') format('svg');
+    font-weight:700;
+    font-style:normal;
+}
+/* force chrome to render SVG font */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:'PenumbraSans';
+		src:url('penumbrasansstd-bold.svg#PenumbraSansStdBold') format('svg');
+		font-weight:700;
+    }
+}
