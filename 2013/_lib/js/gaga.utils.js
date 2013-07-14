@@ -174,3 +174,6 @@ function cssAnim(target,anim) {
 	updateTarget();
 	delay = window.setTimeout( function(){ cleanTarget() }, 1300 );
 }
+
+
+

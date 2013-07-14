@@ -1,5 +1,5 @@
 @font-face {
-    font-family:'loveloblack';
+    font-family:'LoveloBlack';
     src: url('lovelo_black-webfont.eot');
     src: url('lovelo_black-webfont.eot?#iefix') format('embedded-opentype'),
          url('lovelo_black-webfont.woff') format('woff'),
@@ -11,7 +11,7 @@
 /* force chrome to render SVG font */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
-        font-family:'loveloblack';
+        font-family:'LoveloBlack';
 		src:url('lovelo_black-webfont.svg#loveloblack') format('svg');
     }
 }

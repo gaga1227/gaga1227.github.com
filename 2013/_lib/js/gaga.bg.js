@@ -106,10 +106,12 @@ function initLiveBg() {
 		document.getElementById('bgLive').appendChild(renderer.domElement);
 
 		// add Stats.js - https://github.com/mrdoob/stats.js
+		/*
 		stats = new Stats();
 		stats.domElement.style.position	= 'absolute';
 		stats.domElement.style.top	= '0px';
 		document.body.appendChild( stats.domElement );
+		*/
 
 		// create a scene
 		scene = new THREE.Scene();
@@ -164,7 +166,7 @@ function initLiveBg() {
 		render();
 
 		// update stats
-		stats.update();
+		//stats.update();
 	}
 
 	// init scene
