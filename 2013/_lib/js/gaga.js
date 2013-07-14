@@ -2,6 +2,7 @@
 /* init */
 /* ------------------------------------------------------------------------------ */
 function init(){
+	//layout assistance
 	//init live bg
 	initLiveBg();
 	//debug
