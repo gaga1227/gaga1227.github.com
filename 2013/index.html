@@ -31,11 +31,6 @@
 <link type="text/css" rel="stylesheet" media="screen" href="_lib/css/main.css" /><!-- main -->
 <link type="text/css" rel="stylesheet" media="print" href="_lib/css/print.css" /><!-- print -->
 <!-- CSS:LIBS -->
-<link type="text/css" rel="stylesheet" media="screen" href="_lib/js/slabText/slabtext.css" /><!-- slabtext -->
-<!-- CSS:CUSTOM -->
-<style type="text/css">
-	/*insert code here*/		
-</style>
 <!-- JS:THREE -->
 <script type="text/javascript" src="_lib/js/threejs/three.r58.js"></script><!-- three -->
 <script type="text/javascript" src="_lib/js/threejs/detector.js"></script>
@@ -46,17 +41,11 @@
 <script type="text/javascript" src="_lib/js/zepto-1.0.all.min.js"></script><!-- zepto -->
 <!-- JS:LIBS -->
 <script type="text/javascript" src="_lib/js/zepto.ioDim.js"></script><!-- ioDim -->
-<script type="text/javascript" src="_lib/js/slabText/zepto.slabtext.js"></script><!-- slabtext -->
-<script type="text/javascript" src="_lib/js/zepto.fittext.js"></script><!-- fittext -->
 <!-- JS:GAGA -->
 <script type="text/javascript" src="_lib/js/gaga.utils.js"></script><!-- utils -->
 <script type="text/javascript" src="_lib/js/gaga.bg.js"></script><!-- bg -->
 <script type="text/javascript" src="_lib/js/gaga.wf.js"></script><!-- webfont -->
 <script type="text/javascript" src="_lib/js/gaga.js"></script><!-- init -->
-<!-- JS:CUSTOM -->
-<script type="text/javascript">
-	/*insert code here*/
-</script>
 </head>
 <!-- BODY -->
 <body>
@@ -64,15 +53,24 @@
 <div id="debugInfo" class="nfp debug" data-on="" data-width=""></div>
 <!-- BGLIVE -->
 <div id="bgLive"></div>
+<!-- LOADER -->
+<div id="loader" class=""></div>
 <!-- CONTAINER -->
 <div id="container">
 	<!-- HEADER -->
 	<div id="header">
-		<span id="hdr1" class="h1">Johnny Xu</span>
-		<span id="hdr2" class="h2">Creative</span>
-		<span id="hdr3" class="h2">Designer</span>
-		<span id="hdr4" class="h2">Developer</span>
+		<h1 id="hdr1" class="hdr h1">Johnny&nbsp;Xu</h1>
+		<h2 id="hdr2" class="hdr h2">Creative</h2>
+		<h2 id="hdr3" class="hdr h2">Designer</h2>
+		<h2 id="hdr4" class="hdr h2">Developer</h2>
 	</div><!-- /HEADER -->
+	<!-- NAV -->
+	<ul id="nav">
+		<li id="navItem1"><a href="#about">About</a></li>
+		<li id="navItem2"><a href="#work">Work</a></li>
+		<li id="navItem3"><a href="#resume">Resume</a></li>
+		<li id="navItem4"><a href="#blog">Blog</a></li>
+	</ul><!-- /NAV -->
 </div><!-- /CONTAINER -->
 </body>
 </html>

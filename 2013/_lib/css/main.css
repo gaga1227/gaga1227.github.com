@@ -36,7 +36,7 @@ th, td { vertical-align:top; }
     color:#000; background:#ccc; }
 
 /* Link styles*/
-a           { color: #222; } 
+a           { color: #222; }
 a:visited   { color: #222; }
 a:hover     { color: #222; }
 a:focus     { color: #222; }
@@ -76,16 +76,73 @@ a {
 
 /* -------------------------------------------------------------------------- */
 /* body */
-body { 
-	position:relative; margin:0; padding:0;
-	color:#111; background:#fff; 
-	font-family:sans-serif; font-size:20px; font-weight:normal; line-height:25px; }
+body {
+	position:relative; margin:0 auto; padding:0; overflow:hidden;
+	/*min-width:320px; max-width:1200px;*/
+	color:#111; background:#fff;
+	font-family:sans-serif; font-size:20px; font-weight:normal; line-height:25px;
+	/*transition*/
+	/*-webkit-transform:translate3d(0,0,0);*/
+	-webkit-transition:opacity 1.2s ease-in-out;
+	-moz-transition:opacity 1.2s ease-in-out;
+	-o-transition:opacity 1.2s ease-in-out;
+	transition:opacity 1.2s ease-in-out;
+	/*opacity*/
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:alpha(opacity=0); }
+.wf-active body {
+	/*opacity*/
+	opacity:1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter:alpha(opacity=100); }
+
+/* -------------------------------------------------------------------------- */
+/* loader */
+#loader {
+	position:absolute; top:50%; left:50%; width:40px; height:40px; margin:-20px 0 0 -20px; padding:0; overflow:hidden; z-index:10000;
+	background:#01ddff;
+	/*transition*/
+	/*-webkit-transform:translate3d(0,0,0);*/
+	-webkit-transition:opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+	-moz-transition:opacity 0.3s ease-in-out, -moz-animation 0.3s ease-in-out;
+	-o-transition:opacity 0.3s ease-in-out, -o-transform 0.3s ease-in-out;
+	transition:opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+	/*opacity*/
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter:alpha(opacity=0);
+	/*transform*/
+	-webkit-transform:scale(0);
+	-moz-transform:scale(0);
+	-ms-transform:scale(0);
+	-o-transform:scale(0);
+	transform:scale(0); }
+
+	/* active */
+	#loader.active {
+		display:block;
+		/*animation*/
+		-webkit-animation:spin 1.8s infinite linear;
+		-moz-animation:spin 1.8s infinite linear;
+		-o-animation:spin 1.8s infinite linear;
+		animation:spin 1.8s infinite linear;
+		/*opacity*/
+		opacity:1;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter:alpha(opacity=100);
+		/*transform*/
+		-webkit-transform:scale(1);
+		-moz-transform:scale(1);
+		-ms-transform:scale(1);
+		-o-transform:scale(1);
+		transform:scale(1); }
 
 
 /* ==========================================================================
    structure - BLOCKINGS
    ========================================================================== */
-   
+
 #container {
 	position:absolute; top:0; left:0; width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
 
@@ -96,16 +153,16 @@ body {
 
 /* -------------------------------------------------------------------------- */
 /* container */
-#header { 
+#header {
 	position:absolute; top:50%; left:50%; width:160px; height:120px; margin:-80px 0 0 -100px; padding:0; overflow:hidden;
 	background:#fff; border:20px solid #fff;
-	text-align:center; 
+	text-align:center;
 	/*transition*/
 	/*-webkit-transform:translate3d(0,0,0);*/
 	-webkit-transition:-webkit-transform 1.2s ease-in-out;
 	-moz-transition:-moz-transform 1.2s ease-in-out;
 	-o-transition:-o-transform 1.2s ease-in-out;
-	transition:transform 1.2s ease-in-out; 
+	transition:transform 1.2s ease-in-out;
 	/*transform*/
 	-webkit-transform:scale(1.2);
 	-moz-transform:scale(1.2);
@@ -119,43 +176,67 @@ body {
 	-ms-transform:scale(1);
 	-o-transform:scale(1);
 	transform:scale(1); }
-	
+
 	/* -------------------------------------------------------------------------- */
 	/* headings */
-	#header .h1,
-	#header .h2 { font-family:'NovecentoWide',sans-serif; font-size:25px; line-height:30px; text-transform:uppercase; }
+	#header .hdr {
+		display:block; margin:0; padding:0; white-space:nowrap;
+		font-family:'NovecentoWide',sans-serif; font-size:25px; line-height:30px;
+		text-align:left; text-transform:uppercase; }
 	#header .h1 { font-weight:700; }
 	#header .h2 { font-weight:600; }
-	
+
+	/*
 	#hdr1 { letter-spacing:0; }
 	#hdr2 { letter-spacing:4px; }
 	#hdr3 { letter-spacing:4px; }
 	#hdr4 { letter-spacing:1px; }
-	
-	#header span { 
-		display:block; white-space:nowrap;
-		/*transition*/
-		/*-webkit-transform:translate3d(0,0,0);*/
-		-webkit-transition:opacity 1.2s ease-in-out;
-		-moz-transition:opacity 1.2s ease-in-out;
-		-o-transition:opacity 1.2s ease-in-out;
-		transition:opacity 1.2s ease-in-out;
-		/*opacity*/
-		opacity:0;
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-		filter:alpha(opacity=0); }
-	.wf-active #header span {
-		/*opacity*/
-		opacity:1;
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-		filter:alpha(opacity=100); }
+	*/
 
 
 /* ==========================================================================
    structure - NAV
    ========================================================================== */
-		
-		
+
+/* -------------------------------------------------------------------------- */
+/* common */
+#nav,
+#nav li,
+#nav li a {
+	display:block; position:relative; list-style:none; margin:0; padding:0;
+	text-decoration:none!important; }
+
+/* -------------------------------------------------------------------------- */
+/* container */
+#nav {
+	position:absolute; top:50%; left:0; width:100%; height:160px; margin:-80px 0 0 0; padding:0; overflow:hidden;
+	font-family:'LoveloBlack',sans-serif; font-size:30px; font-weight:normal; line-height:160px; text-align:center; text-transform:uppercase; }
+
+	/* navItem */
+	#nav li {
+		position:absolute; top:0; width:200px; height:auto; margin:0 0 0 -100px; padding:0;
+		/*-webkit-transform:translate3d(0,0,0);*/
+		-webkit-transition:left 1.6s ease-in-out;
+		-moz-transition:left 1.6s ease-in-out;
+		-o-transition:left 1.6s ease-in-out;
+		transition:left 1.6s ease-in-out; }
+
+	#nav #navItem1 { left:21.67%; }
+	#nav #navItem2 { left:35.34%; }
+	#nav #navItem3 { left:62.68%; }
+	#nav #navItem4 { left:78.35%; }
+
+	.wf-active #nav #navItem1 { left:16.67%; }
+	.wf-active #nav #navItem2 { left:33.34%; }
+	.wf-active #nav #navItem3 { left:66.68%; }
+	.wf-active #nav #navItem4 { left:83.35%; }
+
+	/* link */
+	#nav li a:hover,
+	#nav li a:focus,
+	#nav li a:active { background:#fff; }
+
+
 /* ==========================================================================
    structure - MAIN
    ========================================================================== */
@@ -173,10 +254,10 @@ body {
 .col3,
 .col4,
 .col5 { position:relative; height:auto; margin:0; padding:0; overflow:visible; }
-	
+
 /* colFull */
 .colFull { width:auto; float:none; clear:both; }
-	
+
 /* col2 */
 .col2	{ width:47.75%; }
 .col2a	{ float:left; clear:left; }
@@ -226,7 +307,7 @@ body {
 .bgShade { 	display:block; position:absolute; margin:0; padding:0; overflow:hidden;
 			/*border-radius*/-webkit-border-radius:50%; border-radius:50%;
 			/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box; }
-			
+
 
 /* ==========================================================================
    common - ICONS
@@ -234,9 +315,9 @@ body {
 
 /* -------------------------------------------------------------------------- */
 /* icon */
-.icon { 
-	position:absolute; 
-	text-align:center; 
+.icon {
+	position:absolute;
+	text-align:center;
 	/*transition*/
 	/*-webkit-transform:translate3d(0,0,0);*/
 	-webkit-transition:all 0.3s ease-in-out;
@@ -245,7 +326,7 @@ body {
 	transition:all 0.3s ease-in-out; }
 
 /* -------------------------------------------------------------------------- */
-/* iconInline */	
+/* iconInline */
 .iconInline 		{ display:inline-block; position:relative; padding:0 10px; }
 .iconInlineLeft 	{ padding-left:0; text-align:left; }
 .iconInlineRight	{ padding-right:0; text-align:right; }
@@ -254,7 +335,7 @@ body {
 /* ==========================================================================
    common - DIVIDER
    ========================================================================== */
-.divider { 
+.divider {
 	display:block; position:relative; width:100%; margin:0; padding:0; float:none; clear:both; overflow:hidden;
 	font-size:0; line-height:0; text-align:center; text-indent:-9999em; }
 
@@ -264,13 +345,20 @@ body {
 /* ==========================================================================
    common - BUTTONS
    ========================================================================== */
-   
+
 
 
 /* ==========================================================================
    common - ANIMATION
    ========================================================================== */
 
+/* -------------------------------------------------------------------------- */
+/* animation */
+@-webkit-keyframes spin { 0% { -webkit-transform:rotate(0deg); } 	100% { -webkit-transform:rotate(359deg); } }
+@-moz-keyframes spin 	{ 0% { -moz-transform:rotate(0deg); } 		100% { -moz-transform:rotate(359deg); } }
+@-ms-keyframes spin		{ 0% { -ms-transform:rotate(0deg); }		100% { -ms-transform:rotate(359deg); } }
+@-o-keyframes spin 		{ 0% { -o-transform:rotate(0deg); } 		100% { -o-transform:rotate(359deg); } }
+@keyframes spin			{ 0% { transform:rotate(0deg); }			100% { transform:rotate(359deg); } }
 
 
 /* ==========================================================================
@@ -468,7 +556,7 @@ body {
 /* common */
 .debug code         { display:inline-block; margin:0 0 20px 0; padding:0 10px; clear:both;
                       color:#fff; background:#CC9; text-shadow:0 1px 0px rgba(0,0,0,0.2);
-                      font-size:11px; font-weight:bold; line-height:20px; 
+                      font-size:11px; font-weight:bold; line-height:20px;
                       border-radius:10px;   box-shadow:inset 0 1px 1px rgba(0,0,0,0.2); }
 .debug h1,
 .debug h2,
@@ -487,25 +575,25 @@ body {
 .oldie.debug h2,
 .oldie.debug h3,
 .oldie.debug h4,
-.oldie.debug h5 { 
+.oldie.debug h5 {
     -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#1900FF00, endColorstr=#1900FF00);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#1900FF00, endColorstr=#1900FF00);
     zoom:1; }
 .oldie.debug p,
-.oldie.debug li { 
+.oldie.debug li {
     -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19FFFF00, endColorstr=#19FFFF00);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19FFFF00, endColorstr=#19FFFF00);
     zoom:1; }
-.oldie.debug a  { 
+.oldie.debug a  {
     -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#190000FF, endColorstr=#190000FF);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#190000FF, endColorstr=#190000FF);
     zoom:1; }
 .oldie.debug span,
-.oldie.debug i  { 
+.oldie.debug i  {
     -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19FF0000, endColorstr=#19FF0000);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19FF0000, endColorstr=#19FF0000);
     zoom:1; }
-.oldie.debug div { 
+.oldie.debug div {
     -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#07000000, endColorstr=#07000000);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#07000000, endColorstr=#07000000);
     zoom:1; }
