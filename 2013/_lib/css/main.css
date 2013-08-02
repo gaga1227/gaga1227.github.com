@@ -154,8 +154,7 @@ body {
 /* -------------------------------------------------------------------------- */
 /* container */
 #header {
-	position:absolute; top:50%; left:50%; width:160px; height:120px; margin:-80px 0 0 -100px; padding:0; overflow:hidden;
-	background:#fff; border:20px solid #fff;
+	position:absolute; top:50%; left:50%; width:160px; height:120px; margin:-60px 0 0 -80px; padding:0; z-index:10;
 	text-align:center;
 	/*transition*/
 	/*-webkit-transform:translate3d(0,0,0);*/
@@ -180,9 +179,9 @@ body {
 	/* -------------------------------------------------------------------------- */
 	/* headings */
 	#header .hdr {
-		display:block; margin:0; padding:0; white-space:nowrap;
+		display:block; position:relative; margin:0; padding:0; white-space:nowrap;
 		font-family:'NovecentoWide',sans-serif; font-size:25px; line-height:30px;
-		text-align:left; text-transform:uppercase; }
+		text-transform:uppercase; }
 	#header .h1 { font-weight:700; }
 	#header .h2 { font-weight:600; }
 
@@ -192,6 +191,14 @@ body {
 	#hdr3 { letter-spacing:4px; }
 	#hdr4 { letter-spacing:1px; }
 	*/
+
+	#header #exp {
+		position:absolute; top:0; left:0; width:100%; height:100%; margin:0; padding:0; }
+
+		#header #exp:before {
+			content:attr(data-value);
+			display:inline-block; width:100%; height:auto; margin:0 0 0 -40px; vertical-align:middle;
+			color:#01DDFF; font-family:'LoveloBlack',sans-serif; font-size:200px; line-height:0.83em; text-align:center; }
 
 
 /* ==========================================================================
@@ -234,7 +241,7 @@ body {
 	/* link */
 	#nav li a:hover,
 	#nav li a:focus,
-	#nav li a:active { background:#fff; }
+	#nav li a:active { color:#01DDFF; background:#fff; }
 
 
 /* ==========================================================================
