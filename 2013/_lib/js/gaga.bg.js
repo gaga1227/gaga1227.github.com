@@ -1,16 +1,16 @@
 function initLiveBg() {
 	// vars
-	var stats, scene, renderer, 
+	var stats, scene, renderer,
 		camera, cameraControls, camZInit = 10000, camZEnd = 20,
 		geometry, meshes, object, total = 20,
 		material, material1, material12,
-		light, 
-		swatch = { blue:0x0076A7, blueLite:0x00DDFF, yellow:0xFFD200, yellowLite:0xFFFF00 }, 
+		light,
+		swatch = { blue:0x0076A7, blueLite:0x00DDFF, yellow:0xFFD200, yellowLite:0xFFFF00 },
 		theme = swatch.blue;
-		
+
 	// populate scene
 	function populateScene(){
-		
+
 		//mat
 		material1 = new THREE.MeshPhongMaterial( {
 			color: swatch.yellow,
@@ -30,8 +30,8 @@ function initLiveBg() {
 		//geo
 		//geometry = new THREE.TetrahedronGeometry( 1 );
 		geometry = new THREE.Geometry();
-		geometry.vertices.push( new THREE.Vector3( -1, 1, 0 ) ); 
-		geometry.vertices.push( new THREE.Vector3( -1, -1, 0 ) ); 
+		geometry.vertices.push( new THREE.Vector3( -1, 1, 0 ) );
+		geometry.vertices.push( new THREE.Vector3( -1, -1, 0 ) );
 		geometry.vertices.push( new THREE.Vector3( 1, -1, 0 ) );
 		geometry.faces.push( new THREE.Face3( 0, 1, 2, new THREE.Vector3( 0, 0, 1 ) ) );
 
@@ -64,7 +64,7 @@ function initLiveBg() {
 		light.position.set( 0, 1, 0 );
 		scene.add( light );
 
-		
+
 	}
 
 	// update scene
@@ -117,7 +117,7 @@ function initLiveBg() {
 		scene = new THREE.Scene();
 
 		// put a camera in the scene
-		camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 10000 );
+		camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
 		camera.position.set(0, 0, camZInit);
 		//camera.lookAt(new THREE.Vector3(window.innerWidth * -2.5, window.innerHeight * 2.5, 0));
 		scene.add(camera);
@@ -134,10 +134,10 @@ function initLiveBg() {
 
 		// transparently support window resize
 		THREEx.WindowResize.bind(renderer, camera);
-		
+
 		//populate the scene
 		populateScene();
-		
+
 	}
 
 	// render the scene
@@ -156,7 +156,7 @@ function initLiveBg() {
 
 	// animation loop
 	function animate() {
-				
+
 		// loop on request animation loop
 		// - it has to be at the begining of the function
 		// - see details at http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating

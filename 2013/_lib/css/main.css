@@ -180,10 +180,12 @@ body {
 	/* headings */
 	#header .hdr {
 		display:block; position:relative; margin:0; padding:0; white-space:nowrap;
-		font-family:'NovecentoWide',sans-serif; font-size:25px; line-height:30px;
+		font-family:'NovecentoWide',sans-serif; font-size:25px; font-weight:300; line-height:30px;
 		text-transform:uppercase; }
-	#header .h1 { font-weight:700; }
-	#header .h2 { font-weight:600; }
+	/*
+	#header .h1 { font-weight:300; }
+	#header .h2 { font-weight:300; }
+	*/
 
 	/*
 	#hdr1 { letter-spacing:0; }
@@ -197,8 +199,14 @@ body {
 
 		#header #exp:before {
 			content:attr(data-value);
-			display:inline-block; width:100%; height:auto; margin:0 0 0 -40px; vertical-align:middle;
-			color:#01DDFF; font-family:'LoveloBlack',sans-serif; font-size:200px; line-height:0.83em; text-align:center; }
+			display:inline-block; width:100%; height:auto; vertical-align:middle;
+			color:rgba(1,221,255,0.8); font-family:'Lovelo',sans-serif; font-size:130px; font-weight:900; line-height:1em; text-align:center;
+			/*transform*/
+			-webkit-transform:scale(1.17);
+			-moz-transform:scale(1.17);
+			-ms-transform:scale(1.17);
+			-o-transform:scale(1.17);
+			transform:scale(1.17);  }
 
 
 /* ==========================================================================
@@ -217,7 +225,7 @@ body {
 /* container */
 #nav {
 	position:absolute; top:50%; left:0; width:100%; height:160px; margin:-80px 0 0 0; padding:0; overflow:hidden;
-	font-family:'LoveloBlack',sans-serif; font-size:30px; font-weight:normal; line-height:160px; text-align:center; text-transform:uppercase; }
+	font-family:'Lovelo',sans-serif; font-size:30px; font-weight:900; line-height:160px; text-align:center; text-transform:uppercase; }
 
 	/* navItem */
 	#nav li {
