@@ -79,7 +79,7 @@ a {
 body {
 	position:relative; margin:0 auto; padding:0; overflow:hidden;
 	/*min-width:320px; max-width:1200px;*/
-	color:#111; background:#fff;
+	color:#111; background:#f00;
 	font-family:sans-serif; font-size:20px; font-weight:normal; line-height:25px;
 	/*transition*/
 	/*-webkit-transform:translate3d(0,0,0);*/
