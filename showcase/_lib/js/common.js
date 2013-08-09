@@ -3,6 +3,7 @@
 /* ------------------------------------------------------------------------------ */
 function init(){
 	//$('.fittext').fitText();
+	/*
 	function slabTextHeadlines() {
         $('.fittext').slabText({
             // Don't slabtext the headers if the viewport is under 380px
@@ -11,9 +12,10 @@ function init(){
     };
 	setTimeout(slabTextHeadlines, 1000);
 	//slabTextHeadlines();
+	*/
 }
 /* DOM.ready */
-$(document).ready(function(){ 
+$(document).ready(function(){
 	Platform.addDOMClass();
-	init();	
+	init();
 });
