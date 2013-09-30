@@ -12,7 +12,7 @@
     	length = methods.length,
     	console = (window.console = window.console || {}),
 		noop = function () {};
-	
+
     while (length--) {
         method = methods[length];
         if (!console[method]) {
@@ -24,7 +24,7 @@
 /* common - debug - displayDebugInfo */
 /* ------------------------------------------------------------------------------ */
 function displayDebugInfo(debug){
-	
+
 	//vars
 	var $debug = $(debug),
 		$html = $('html'),
@@ -32,7 +32,7 @@ function displayDebugInfo(debug){
 		toggle = function() {
 			if ( on == 'true' ) {
 				$debug.css('opacity', '1');
-				$html.addClass('debug');	
+				$html.addClass('debug');
 			} else {
 				$debug.css('opacity', '0');
 				$html.removeClass('debug');
@@ -43,7 +43,13 @@ function displayDebugInfo(debug){
 			on = $debug.attr('data-on');
 			toggle();
 		};
-	
+
+	//exit if IE6,7
+	if ($('html').hasClass('ie6') || $('html').hasClass('ie7')) {
+		$debug.remove();
+		return false;
+	}
+
 	//init and bind event
 	$debug.on('click', function(e){
 		e.preventDefault();
@@ -52,11 +58,11 @@ function displayDebugInfo(debug){
 		$debug.attr('data-on', state);
 		update();
 	});
-	
+
 	//init
 	update();
 	$(window).bind('resize', update);
-		
+
 }
 /* ------------------------------------------------------------------------------ */
 /* common - get Platform */
@@ -99,7 +105,7 @@ var Platform = new function(){
 		'transition'       : 'transitionend'
 	}
 	this.transEndEventName = this.transEndEventNames[ Modernizr.prefixed('transition') ];
-	
+
 	//return self
 	return this;
 }
@@ -122,17 +128,17 @@ var mqStates = {
 function matchMQStates(mqState) {
 	//exit if requested mq state is not available
 	if ( !mqStates[mqState] || !Modernizr._version ) return;
-	
+
 	//vars
 	var mq = Modernizr.mediaqueries,
 		mqMax = (mqState.indexOf('max') != -1) ? true : false,
 		mqMin = (mqState.indexOf('min') != -1) ? true : false,
 		mqNum, mqResult;
-		
+
 	//get mqNum for IE
 	if ( mqMax ) mqNum = parseInt(mqState.replace('max',''),10);
 	if ( mqMin ) mqNum = parseInt(mqState.replace('min',''),10);
-	
+
 	//check mq
 	if ( !mq ) {
 		if (mqMax) {
@@ -143,10 +149,10 @@ function matchMQStates(mqState) {
 	} else {
 		mqResult = Modernizr.mq(mqStates[mqState]);
 	}
-	
+
 	//return mq
 	return mqResult;
-}	
+}
 /* ------------------------------------------------------------------------------ */
 /* common - insert First and Last Child */
 /* ------------------------------------------------------------------------------ */
@@ -160,7 +166,7 @@ function insertFirstLastChild(selection) {
 		//add class if not already
 		if (!$fstChild.hasClass('first-child')) { $fstChild.addClass('first-child'); }
 		if (!$lstChild.hasClass('last-child')) { $lstChild.addClass('last-child'); }
-	});	
+	});
 }
 /* ------------------------------------------------------------------------------ */
 /* common - initCSS3PIE */
@@ -173,7 +179,7 @@ function initCSS3PIE() {
 			PIE.attach(ele);
 		});
 	} else {
-		return false;	
+		return false;
 	}
 }
 /* ------------------------------------------------------------------------------ */
@@ -199,10 +205,10 @@ function initBtnScroll( cls ) {
 		$btnScrolls = $(btnScrollsCls),
 		defaultTarget = '#container',
 		defaultSpeed = 1000;
-	
+
 	//exit if no btnScrolls or scrollTo not loaded
 	if ( !$btnScrolls.length || !$().scrollTo ) return false;
-	
+
 	//process each btnScrolls instance
 	$.each($btnScrolls, function(idx,ele){
 		//vars
@@ -215,7 +221,7 @@ function initBtnScroll( cls ) {
 			console.log(target, speed);
 			$.scrollTo( $(target), speed, {axis:'y'} );
 		});
-	});	
+	});
 }
 
 
