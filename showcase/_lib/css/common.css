@@ -98,7 +98,7 @@ body {
 
 /* responsive */
 @media only screen and (max-width:640px) {
-  #container { padding:5%; }
+  #container { padding:5% 0; }
 }
 
 /* ==========================================================================
@@ -142,7 +142,7 @@ body {
 
     /* h3 */
     #folio h3 {
-      margin:2em 0 1em 0; color:#007aff; font-size:25px; font-weight:200; text-transform:none; }
+      margin:2em 0 1em 0; color:#007aff; font-size:25px; font-weight:300; text-transform:none; }
 
 /* responsive */
 @media only screen and (max-width:640px) {
