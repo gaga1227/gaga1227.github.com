@@ -1,7 +1,27 @@
 /* ------------------------------------------------------------------------------ */
+/* initToggle */
+/* ------------------------------------------------------------------------------ */
+function initToggle(){
+	//vars
+	var $folio = $('#folio'),
+		$btnFolioDev = $('#btnFolioDev'),
+		//state classes
+		activeCls = 'active';
+	//button handler
+	function toggleFolio(e) {
+		e.preventDefault();
+		$btnFolioDev.toggleClass(activeCls);
+		$folio.toggleClass(activeCls);
+	}
+	//bind side menu interaction
+	$btnFolioDev.on('click', toggleFolio);
+}
+/* ------------------------------------------------------------------------------ */
 /* init */
 /* ------------------------------------------------------------------------------ */
 function init(){
+	//interaction
+	initToggle();
 	//debug
 	displayDebugInfo('#debugInfo');
 }
