@@ -22,6 +22,8 @@ function initToggle(){
 function init(){
 	//interaction
 	initToggle();
+	//init live bg
+	initLiveBg();
 	//debug
 	displayDebugInfo('#debugInfo');
 }
