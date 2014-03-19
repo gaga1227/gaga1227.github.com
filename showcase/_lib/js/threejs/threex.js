@@ -107,7 +107,7 @@ THREEx.DragPanControls.prototype._onTouchMove = function(event)
 {
 	if( event.touches.length != 1 )	return;
 
-	event.preventDefault();
+	//event.preventDefault();
 
 	this._mouseX = ( event.touches[ 0 ].pageX / window.innerWidth ) - 0.5;
 	this._mouseY = ( event.touches[ 0 ].pageY / window.innerHeight) - 0.5;
