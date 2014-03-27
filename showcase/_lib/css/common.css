@@ -129,9 +129,10 @@ body {
 	#header h2 + h2 { margin-top:0; }
 
 	/* btnFolio */
-	#header .btnFolio 	{ color:#007aff; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+	#header .btnFolio 		{ color:#007aff; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,0,0); }
 	#header .btnFolio.dev	{ color:#ff3b30; }
-	#header .btnFolio.cv	{ color:#ffaa00; }
+	#header .btnFolio.cv	{ color:#ff9501; }
+	#header .btnFolio.blog	{ color:#49bf1f; }
 
 		/* bg */
 		#header .btnFolio:before {
@@ -143,10 +144,9 @@ body {
 			-webkit-transition:all 0.3s ease-in-out;
 			-moz-transition:all 0.3s ease-in-out;
 			transition:all 0.3s ease-in-out; }
-		#header .btnFolio.dev:before {
-			background:#ff3b30;	}
-		#header .btnFolio.cv:before {
-			background:#ffaa00;	}
+		#header .btnFolio.dev:before 	{ background:#ff3b30; }
+		#header .btnFolio.cv:before 	{ background:#ff9501; }
+		#header .btnFolio.blog:before 	{ background:#49bf1f; }
 
 	/* interaction */
 	.no-touch #header .btnFolio:hover,
