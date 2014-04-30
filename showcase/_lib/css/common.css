@@ -124,7 +124,7 @@ body {
 	text-transform:uppercase; text-align:left; line-height:1.15em; }
 
 	/* text */
-	#header h1 { font-size:40px; font-weight:400; }
+	#header h1 { font-size:50px; font-weight:400; }
 	#header h2 { font-size:50px; font-weight:300; margin-top:0.5em; color:#ff3b30; }
 	#header h2 + h2 { margin-top:0; }
 
@@ -169,8 +169,8 @@ body {
 	#header,
 	#header h1,
 	#header h2 { text-align:center; }
-	#header    { margin-top:4%; }
-	#header h1 { font-size:38px; }
+	#header    { margin-top:8%; }
+	#header h1 { font-size:30px; }
 	#header h2 { font-size:30px; margin-top:1em; }
 }
 
