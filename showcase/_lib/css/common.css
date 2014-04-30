@@ -211,6 +211,22 @@ body {
 
 
 /* ==========================================================================
+   structure - GAGA
+   ========================================================================== */
+
+#gaga {
+	display:block; width:120px; height:auto; margin:1em 0 0 0; padding:0;
+	font-size:50px;
+	/*border-radius*/-webkit-border-radius:50%; border-radius:50%;
+	/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding-box; background-clip:padding-box; }
+
+/* responsive */
+@media only screen and (max-width:640px) {
+	#gaga { width:80px; margin:4% auto; font-size:30px; }
+}
+
+
+/* ==========================================================================
    common - BTNICON
    ========================================================================== */
 
