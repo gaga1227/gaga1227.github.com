@@ -173,7 +173,7 @@ body {
 	#header,
 	#header h1,
 	#header h2 { text-align:center; }
-	#header    { margin-top:8%; }
+	#header    { margin-top:5%; }
 	#header h1 { font-size:30px; }
 	#header h2 { font-size:30px; margin-top:1em; }
 }
