@@ -25,7 +25,7 @@ function init(){
 	//init live bg
 	initLiveBg();
 	//debug
-	displayDebugInfo('#debugInfo');
+	// displayDebugInfo('#debugInfo');
 }
 /* DOM.ready */
 $(document).ready(function(){
