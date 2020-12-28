@@ -27,8 +27,22 @@
 	}
 	#refs a {
 		display: block;
+		background: white;
+		position: relative;
+		min-height: 20px;
 		border: 24px solid white;
 		margin: 24px auto;
+		text-align: center;
+	}
+	#refs a::before {
+		content: 'Loading...';
+		position: absolute;
+		display: block;
+		width: 100%;
+		top: 0;
+		left: 0;
+		text-align: center;
+		font-weight: bold;
 	}
 	#refs a:hover,
 	#refs a:focus,
@@ -38,6 +52,7 @@
 	}
 	#refs img {
 		display: block;
+		position: relative;
 		width: 100%;
 		height: auto;
 	}
