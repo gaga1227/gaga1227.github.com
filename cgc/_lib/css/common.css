@@ -1,0 +1,67 @@
+/* ------------------------------------------------------------------------------
+   THIS FILE IS KEPT CONSISTENT ACROSS MMP, MMHC, MMPE SITES
+   CUSTOMISATION IS DONE WITHIN 'skin.css'
+   ------------------------------------------------------------------------------ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   Author: JX 20130127 (Adapted from HTML5 Boilerplate 4)
+   ========================================================================== */
+
+/* base text style */
+html, button, input, select, textarea { color:#222; font-family:sans-serif; }
+body { font-size:1em; line-height:1.4; }
+
+/* text selection style */
+::-moz-selection { color:#fff; background:#222; text-shadow:none; }
+::selection { color:#fff; background:#222; text-shadow:none; }
+
+/* simplified hr style */
+hr { display:block; height:1px; margin:1em 0; padding:0; border:0; border-top:1px solid #ccc; }
+
+/* Remove the gap between images and the bottom of their containers: h5bp.com/i/440 */
+img { vertical-align:middle; }
+
+/* Remove default fieldset styles. */
+fieldset { border:0; margin:0; padding:0; }
+
+/* Remove default webkit styles on form elements. */
+button, input, select, textarea { -webkit-appearance:none; -webkit-border-radius:0; }
+button:focus, input:focus, select:focus, textarea:focus { outline: none; }
+
+/* Allow only vertical resizing of textareas. */
+textarea { resize:vertical; }
+
+/* Default table cell vertical alignment */
+th, td { vertical-align:top; }
+
+/* Link styles*/
+a           { color: #000; /*grey*/ }
+a:visited   { color: #000; /*grey*/ }
+a:hover     { color: #000; /*black*/ }
+a:focus     { color: #000; /*black*/ }
+
+
+/* ==========================================================================
+   Primary Styles
+   Author: JX 20130526
+   ========================================================================== */
+
+
+/* ==========================================================================
+   structure - GLOBAL
+   ========================================================================== */
+
+/* body */
+body {
+	font-family: sans-serif; font-size:16px; font-weight:400; }
+
+/* ==========================================================================
+   structure - CONTAINER
+   ========================================================================== */
+
+/* container */
+#container {
+	position:relative; width:auto; height:auto; margin:0 auto; padding:48px; }
+
+
