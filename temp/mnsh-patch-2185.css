@@ -1,1 +1,13 @@
+/*
+ Large BP only: 73.25rem (1172px) (match footer)
+ */
+@media only screen and (min-width: 73.25rem) {
 
+  /* src/scss/media/media-queries.scss */
+  .content-wrapper { /* increase globally */
+    max-width: 92.25rem; /* 1476px: (1508 - 32) see footer variables */
+  }
+  main#main.main[role='main'] > .content > .content-wrapper { /* only top level should have side paddings */
+    padding: 0 80px; /* match footer */
+  }
+}
