@@ -5,9 +5,9 @@
 
   /* src/scss/media/media-queries.scss */
   .content-wrapper { /* increase globally */
-    max-width: 92.25rem; /* 1476px: (1508 - 32) see footer variables */
+    max-width: 94.25rem; /* 1508px: (1316 + 32 + 160) see footer variables */
   }
   main#main.main[role='main'] > .content > .content-wrapper { /* only top level should have side paddings */
-    padding: 0 80px; /* match footer */
+    padding: 0 96px; /* match footer 80px + column gutter size 16px */
   }
 }
