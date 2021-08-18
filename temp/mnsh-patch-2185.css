@@ -7,7 +7,9 @@
   .content-wrapper { /* increase globally */
     max-width: 94.25rem; /* 1508px: (1316 + 32 + 160) see footer variables */
   }
-  main#main.main[role='main'] > .content > .content-wrapper { /* only top level should have side paddings */
+ /* only top level should have side paddings */
+ main#main.main[role='main'] > .content-wrapper, /* center layout */
+ main#main.main[role='main'] > .content > .content-wrapper { /* LHS nav layout */
     padding: 0 96px; /* match footer 80px + column gutter size 16px */
   }
 }
