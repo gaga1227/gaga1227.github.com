@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'NovecentoWide';
+  src: url('novecentowide-light-webfont.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NovecentoWide';
+  src: url('novecentowide-book-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NovecentoWide';
+  src: url('novecentowide-normal-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NovecentoWide';
+  src: url('novecentowide-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NovecentoWide';
+  src: url('novecentowide-demibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NovecentoWide';
+  src: url('novecentowide-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
