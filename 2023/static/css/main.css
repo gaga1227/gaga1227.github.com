@@ -46,6 +46,7 @@ body {
 /* live bg */
 #liveBg {
   position: relative;
+  filter: blur(1px);
   width: 100vw;
   width: 100dvw;
   height: 100vh;
