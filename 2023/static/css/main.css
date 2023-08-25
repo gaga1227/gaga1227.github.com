@@ -132,13 +132,19 @@ h1 > a:visited {
   text-decoration: none;
 }
 
+/* links */
+#link {
+   flex: 0 0 auto;
+   margin: 0 auto;
+   text-align: center;
+}
+
 /* links: styled */
 a.link,
 a.link:link,
 a.link:active,
 a.link:visited {
-  flex: 0 0 auto;
-  display: inline-block;
+  display: inline-flex;
   width: auto;
   margin: 8px 16px;
   padding: 4px 8px;
