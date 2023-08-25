@@ -46,13 +46,17 @@ body {
 /* live bg */
 #liveBg {
   position: relative;
+  width: 100vw;
   width: 100dvw;
+  height: 100vh;
   height: 100dvh;
 }
 #liveBg > canvas {
   display: block;
   position: absolute;
+  width: 50vw;
   width: 50dvw;
+  height: 50vh;
   height: 50dvh;
 }
 #liveBgView1 {
@@ -135,7 +139,7 @@ a.link:visited {
   flex: 0 0 auto;
   display: inline-block;
   width: auto;
-  margin: 16px 0 0 0;
+  margin: 8px 16px;
   padding: 4px 8px;
   color: inherit;
   font-size: 14px;
