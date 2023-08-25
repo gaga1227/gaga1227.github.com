@@ -96,7 +96,7 @@ main {
   height: auto;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
   transition-property: opacity, scale;
   transition-duration: 2.4s;
   transition-timing-function: ease-in-out;
