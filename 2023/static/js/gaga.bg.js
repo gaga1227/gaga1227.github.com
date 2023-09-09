@@ -1,103 +1,154 @@
-window.LIVE_BG_FEATURES = {
-  STATS: true,
-};
-
 function initLiveBg() {
-  // vars
-  let stats;
-  let scene;
-  let renderer;
-  let camera;
-  let cameraControls;
-  let object;
-  let views = [];
-
+  // -------------------------------------------------------------
   // constants
-  const CAM_Z_INIT = 10000;
-  const CAM_Z_END = 20;
-  const SWATCH = {
-    BLUE: 0x0076a7,
-    BLUE_LITE: 0x00ddff,
+  const DEBUG = false;
+  const COLORS = {
+    WHITE: 0xffffff,
     YELLOW: 0xffd200,
     YELLOW_LITE: 0xffff00,
   };
+  // mesh
+  const MESH_COUNT = 20;
+  const MESH_SIZE = 1;
+  const MESH_SCALE = 8;
+  // cam
+  const CAM_PERSPECTIVE = 35;
+  const CAM_CLIP_RANGE = [1, 2000];
+  // anim
+  const ANIM_CAM_POS_Z = [1000, 20];
+  const ANIM_CAM_EASING = 0.1;
+  const ANIM_MESH_ROTATION_FACTOR = 0.0001;
 
-  // populate scene
-  const populateScene = () => {
-    // material
-    const material1 = new THREE.MeshPhongMaterial({
-      color: SWATCH.YELLOW,
-      shading: THREE.FlatShading,
+  // -------------------------------------------------------------
+  // utils
+  const getAspect = () => {
+    return window.innerWidth / window.innerHeight;
+  };
+  const easeCamPos = (axis, target) => {
+    if (Math.round(camera.position[axis]) > target) {
+      camera.position[axis] -=
+        (camera.position[axis] - target) * ANIM_CAM_EASING;
+    }
+  };
+  const createMeshes = ({ count = 1 } = {}) => {
+    const meshes = [];
+    // materials
+    const matProps = {
       side: THREE.DoubleSide,
+      flatShading: true,
+      transparent: true,
+    };
+    const material1 = new THREE.MeshPhongMaterial({
+      color: COLORS.YELLOW,
       opacity: 0.8,
-      transparency: true,
+      ...matProps,
     });
     const material2 = new THREE.MeshPhongMaterial({
-      color: SWATCH.YELLOW_LITE,
-      shading: THREE.FlatShading,
-      side: THREE.DoubleSide,
-      opacity: 0.5,
-      transparency: true,
+      color: COLORS.YELLOW_LITE,
+      opacity: 0.6,
+      ...matProps,
     });
-
-    // geometry
-    const geometry = new THREE.Geometry();
-    geometry.vertices.push(new THREE.Vector3(-1, 1, 0));
-    geometry.vertices.push(new THREE.Vector3(-1, -1, 0));
-    geometry.vertices.push(new THREE.Vector3(1, -1, 0));
-    geometry.faces.push(new THREE.Face3(0, 1, 2, new THREE.Vector3(0, 0, 1)));
-
-    // object and meshes
-    const maxMeshes = 20;
-    object = new THREE.Object3D();
-    for (let i = 0; i < maxMeshes; i++) {
-      const material = i < maxMeshes * 0.6 ? material1 : material2;
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.position
-        .set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5)
-        .normalize();
-      mesh.position.multiplyScalar(Math.random() * 15);
-      mesh.rotation.set(
-        Math.random() * 2,
-        Math.random() * 2,
-        Math.random() * 2,
-      );
-      mesh.scale.x = mesh.scale.y = mesh.scale.z = 8; // Math.random() * 0.5+ 0.05;
-      object.add(mesh);
-    }
-
-    // add to scene
-    scene.add(object);
-
-    // lights
-    scene.add(new THREE.AmbientLight(0xffffff));
-    const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(0, 1, 0);
-    scene.add(light);
+    // utils
+    const getRandomPos = () => Math.random() - 0.5;
+    const getRandomRotation = () => Math.random() * 2;
+    const getRandomScalar = () => Math.random() * 15;
+    // fill meshes loop
+    Array(count)
+      .fill('')
+      .forEach((item, index) => {
+        // shape
+        const shape = new THREE.Shape();
+        const x = 0;
+        const y = 0;
+        shape.moveTo(x - MESH_SIZE, y - MESH_SIZE);
+        shape.lineTo(x + MESH_SIZE, y - MESH_SIZE);
+        shape.lineTo(x - MESH_SIZE, y + MESH_SIZE);
+        // geo
+        const geometry = new THREE.ShapeGeometry(shape);
+        // material
+        const material = index < count * 0.6 ? material1 : material2;
+        // mesh
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position
+          .set(getRandomPos(), getRandomPos(), getRandomPos())
+          .normalize();
+        mesh.position.multiplyScalar(getRandomScalar());
+        mesh.rotation.set(
+          getRandomRotation(),
+          getRandomRotation(),
+          getRandomRotation(),
+        );
+        mesh.scale.x = mesh.scale.y = mesh.scale.z = MESH_SCALE;
+        meshes.push(mesh);
+      });
+    return meshes;
   };
 
-  // update scene
+  // -------------------------------------------------------------
+  // setup: cam
+  const camera = new THREE.PerspectiveCamera(
+    CAM_PERSPECTIVE,
+    getAspect(),
+    CAM_CLIP_RANGE[0],
+    CAM_CLIP_RANGE[1],
+  );
+  camera.position.set(0, 0, ANIM_CAM_POS_Z[0]);
+  // setup: renderer
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true,
+  });
+  // setup: views
+  const views = [
+    document.getElementById('liveBgView1'),
+    document.getElementById('liveBgView2'),
+    document.getElementById('liveBgView3'),
+    document.getElementById('liveBgView4'),
+  ];
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  // setup: scene
+  const scene = new THREE.Scene();
+  // setup: fog
+  scene.fog = new THREE.FogExp2(COLORS.WHITE, 0.025);
+  // setup: window resize
+  THREEx.WindowResize.bind(renderer, camera);
+  // setup: control
+  const cameraControls = new THREEx.DragPanControls(camera);
+  // setup: stats
+  const stats = new Stats();
+  stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+  DEBUG && document.body.appendChild(stats.dom);
+
+  // -------------------------------------------------------------
+  // mesh / materials / scene
+  // spheres
+  const meshes = createMeshes({
+    count: MESH_COUNT,
+  });
+  // scene group
+  const group = new THREE.Group();
+  group.add(...meshes);
+  scene.add(group);
+  // light
+  const ambientLight = new THREE.AmbientLight(COLORS.WHITE, 3);
+  scene.add(ambientLight);
+
+  // -------------------------------------------------------------
+  // render
   const updateScene = () => {
     // camera
-    if (Math.round(camera.position.z) > CAM_Z_END) {
-      camera.position.z -= (camera.position.z - CAM_Z_END) * 0.1;
-    }
-
+    easeCamPos('z', ANIM_CAM_POS_Z[1]);
     // meshes
-    for (let i = 0; i < object.children.length; i++) {
-      const mesh = object.children[i];
-      mesh.rotation.x += mesh.scale.x * 0.0001;
-      mesh.rotation.y += mesh.scale.y * 0.0001;
-      mesh.rotation.z += mesh.scale.z * 0.0001;
-    }
+    meshes.forEach((mesh) => {
+      mesh.rotation.x += mesh.scale.x * ANIM_MESH_ROTATION_FACTOR;
+      mesh.rotation.y += mesh.scale.y * ANIM_MESH_ROTATION_FACTOR;
+      mesh.rotation.z += mesh.scale.z * ANIM_MESH_ROTATION_FACTOR;
+    });
   };
-
-  // render the scene
   const render = () => {
     updateScene();
     cameraControls.update();
     renderer.render(scene, camera);
-
     // sync result to all views
     // ref: https://github.com/mrdoob/three.js/blob/35ae830a7c4544582ed2759e5b18c5d6ef37c6d9/examples/webgl_multiple_canvases_grid.html#L119
     views.forEach((viewCanvas, index) => {
@@ -108,75 +159,13 @@ function initLiveBg() {
     });
   };
 
-  // animation loop
-  const animate = () => {
-    // loop on request animation loop
-    // - it has to be at the start of the function
-    // - see details at http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
-    requestAnimationFrame(animate);
-
-    // do render
+  // -------------------------------------------------------------
+  // init and loop
+  const animateLoop = function () {
+    requestAnimationFrame(animateLoop);
+    DEBUG && stats.begin();
     render();
-
-    // update stats
-    if (
-      LIVE_BG_FEATURES.STATS &&
-      !!stats &&
-      typeof stats.update === 'function'
-    ) {
-      stats.update();
-    }
+    DEBUG && stats.end();
   };
-
-  // init the scene
-  const initScene = () => {
-    // setup renderer
-    renderer = new THREE.CanvasRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    // document.getElementById('liveBg').appendChild(renderer.domElement);
-
-    // populate view canvas refs
-    views = [
-      document.getElementById('liveBgView1'),
-      document.getElementById('liveBgView2'),
-      document.getElementById('liveBgView3'),
-      document.getElementById('liveBgView4'),
-    ];
-
-    // add Stats.js - https://github.com/mrdoob/stats.js
-    if (LIVE_BG_FEATURES.STATS) {
-      stats = new Stats();
-      stats.domElement.style.position = 'absolute';
-      stats.domElement.style.top = '0';
-      stats.domElement.style.left = '0';
-      document.body.appendChild(stats.domElement);
-    }
-
-    // create a scene
-    scene = new THREE.Scene();
-
-    // put a camera in the scene
-    camera = new THREE.PerspectiveCamera(
-      40,
-      window.innerWidth / window.innerHeight,
-      1,
-      10000,
-    );
-    camera.position.set(0, 0, CAM_Z_INIT);
-    scene.add(camera);
-
-    // setup a camera control
-    cameraControls = new THREEx.DragPanControls(camera);
-
-    // transparently support window resize
-    THREEx.WindowResize.bind(renderer, camera);
-
-    // populate the scene
-    populateScene();
-  };
-
-  // init scene
-  if (!initScene()) {
-    animate();
-  }
+  animateLoop();
 }

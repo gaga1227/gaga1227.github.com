@@ -19,20 +19,6 @@ a:focus-visible {
 }
 
 /* ==========================================================================
-   Utils Styles
-   ========================================================================== */
-.visuallyHidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-
-/* ==========================================================================
    Primary Styles
    Author: JX 202309
    ========================================================================== */
@@ -133,18 +119,20 @@ h1 > a:visited {
 }
 
 /* links */
-#link {
-   flex: 0 0 auto;
-   margin: 0 auto;
-   text-align: center;
+.links {
+  flex: 0 0 auto;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* links: styled */
 a.link,
 a.link:link,
+a.link:hover,
 a.link:active,
 a.link:visited {
   display: inline-flex;
+  position: relative;
   width: auto;
   margin: 8px 16px;
   padding: 4px 8px;
@@ -153,9 +141,43 @@ a.link:visited {
   font-weight: 600;
   line-height: 40px;
   white-space: nowrap;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
-a.link:hover {
-  text-decoration: underline;
+a.link::after {
+  content: '';
+  background: currentColor;
+  display: block;
+  position: absolute;
+  top: auto;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  width: auto;
+  height: 3px;
+  opacity: 0;
+  font-size: 1px;
+  line-height: 1;
+  overflow: hidden;
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+a.link:hover::after {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Utils Styles
+   ========================================================================== */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
